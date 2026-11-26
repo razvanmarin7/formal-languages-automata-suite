@@ -1,0 +1,22 @@
+# Gramatica putin mai bogata pentru propozitii simple.
+# Genereaza propozitii de forma:
+# the dog chase the cat
+# a cat eat
+# dog chase a dog
+
+[grammar]
+non_terminals = P, NP, N, V, ART
+terminals = dog, cat, food, eat, chase, the, a
+start = P
+
+[productions]
+P -> NP V | NP V NP
+NP -> N | ART N
+ART -> the | a
+N -> dog | cat | food
+V -> eat | chase
+
+[settings]
+max_steps = 8
+max_words = 30
+check = the dog chase a cat

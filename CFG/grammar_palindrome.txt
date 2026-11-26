@@ -1,0 +1,15 @@
+# Gramatica pentru palindroame peste alfabetul {a, b}.
+# Exemple: epsilon, a, b, aa, bb, aba, bab, abba.
+
+[grammar]
+non_terminals = S
+terminals = a, b
+start = S
+
+[productions]
+S -> a S a | b S b | a | b | epsilon
+
+[settings]
+max_steps = 8
+max_words = 30
+check = abba

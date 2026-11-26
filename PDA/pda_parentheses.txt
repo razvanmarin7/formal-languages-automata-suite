@@ -1,0 +1,17 @@
+[pda]
+states = q
+alphabet = (, )
+stack_alphabet = Z, P
+start = q
+start_stack = Z
+final =
+accept_by = empty_stack
+
+[transitions]
+q, (, Z -> q, P Z
+q, (, P -> q, P P
+q, ), P -> q, epsilon
+q, epsilon, Z -> q, epsilon
+
+[settings]
+check = epsilon, (), (()), ()(), (()()), (, ), ()), (() 

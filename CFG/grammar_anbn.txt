@@ -1,0 +1,16 @@
+# Gramatica independenta de context.
+# Genereaza limbajul a^n b^n:
+# epsilon, ab, aabb, aaabbb, ...
+
+[grammar]
+non_terminals = S
+terminals = a, b
+start = S
+
+[productions]
+S -> a S b | epsilon
+
+[settings]
+max_steps = 10
+max_words = 20
+check = aaabbb

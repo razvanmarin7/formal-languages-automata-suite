@@ -1,0 +1,15 @@
+﻿[nfa]
+states = q0, q1, q2, q3, q4
+alphabet = a, b
+start = q0
+final = q2, q4
+
+[transitions]
+q0, epsilon -> q1, q3
+q1, a -> q1
+q1, b -> q2
+q3, a -> q4
+q4, b -> q4
+
+[settings]
+check = epsilon, b, ab, aaab, a, abb, abbb, ba, aa

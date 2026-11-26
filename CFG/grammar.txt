@@ -1,0 +1,16 @@
+# Fisier de intrare pentru proiectul LFA: gramatici formale
+# Simbolurile pot fi separate prin virgula sau spatiu.
+# Productiile pot avea alternative separate prin |.
+
+[grammar]
+non_terminals = S
+terminals = 0, 1
+start = S
+
+[productions]
+S -> 0 1 S | 1
+
+[settings]
+max_steps = 10
+max_words = 20
+check = 01011

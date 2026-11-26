@@ -1,0 +1,15 @@
+# Gramatica pentru paranteze corect balansate.
+# Exemple: epsilon, (), ()(), (()), (()()).
+
+[grammar]
+non_terminals = S
+terminals = (, )
+start = S
+
+[productions]
+S -> ( S ) S | epsilon
+
+[settings]
+max_steps = 8
+max_words = 30
+check = (())

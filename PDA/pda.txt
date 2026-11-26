@@ -1,0 +1,19 @@
+[pda]
+states = q_push, q_pop, qf
+alphabet = a, b
+stack_alphabet = Z, A
+start = q_push
+start_stack = Z
+final = qf
+accept_by = final_state
+
+[transitions]
+q_push, epsilon, Z -> qf, Z
+q_push, a, Z -> q_push, A Z
+q_push, a, A -> q_push, A A
+q_push, b, A -> q_pop, epsilon
+q_pop, b, A -> q_pop, epsilon
+q_pop, epsilon, Z -> qf, Z
+
+[settings]
+check = epsilon, ab, aabb, aaabbb, aab, abb, ba, aaabb

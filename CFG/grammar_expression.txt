@@ -1,0 +1,18 @@
+# Gramatica simplificata pentru expresii aritmetice.
+# id este terminal si reprezinta un identificator sau numar.
+# Exemple: id, id + id, id * id, ( id + id ).
+
+[grammar]
+non_terminals = E, T, F
+terminals = id, +, *, (, )
+start = E
+
+[productions]
+E -> E + T | T
+T -> T * F | F
+F -> ( E ) | id
+
+[settings]
+max_steps = 8
+max_words = 20
+check = id + id

@@ -1,0 +1,16 @@
+# Gramatica regulata.
+# Genereaza cuvinte de forma 0^n 1, adica:
+# 1, 01, 001, 0001, ...
+
+[grammar]
+non_terminals = S
+terminals = 0, 1
+start = S
+
+[productions]
+S -> 0 S | 1
+
+[settings]
+max_steps = 10
+max_words = 20
+check = 0001

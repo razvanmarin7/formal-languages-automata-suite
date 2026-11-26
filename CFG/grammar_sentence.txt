@@ -1,0 +1,16 @@
+# Exemplu de gramatica pentru propozitii simple.
+
+[grammar]
+non_terminals = P, N, V
+terminals = dog, cat, eat, chase
+start = P
+
+[productions]
+P -> N V | N V N
+N -> dog | cat
+V -> eat | chase
+
+[settings]
+max_steps = 6
+max_words = 20
+check = dog chase cat
